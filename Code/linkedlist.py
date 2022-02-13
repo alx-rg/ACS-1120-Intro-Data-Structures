@@ -1,7 +1,11 @@
 #!python
 
 
+from lib2to3.pgen2.token import EQUAL
 from platform import node
+from typing import ItemsView
+from venv import create
+from zipapp import create_archive
 
 
 class Node(object):
@@ -57,25 +61,33 @@ class LinkedList:
         """Return the length of this linked list by traversing its nodes.
         TODO: Running time: O(n) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
-        node_count = 0
         node = self.head
-        print(node)
-        while node is not self.tail:
-            node = node.next
-            node_count += 1
-        return node_count
+        count = 0
+        while node != None:
+            count += 1
+            node = self.next
+        return count
+        # node_count = 0
+        # node = self.head
+        # print(node)
+        # while node is not self.tail:
+        #     node = node.next
+        #     node_count += 1
+        # return node_count
 
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
-        new_node = item
-        if (self.is_empty() is True):
-            self.head = new_node
-            self.tail = new_node
+        created_node = Node(item)
+        # check to see if we're at the head/begin of the linked list
+        if self.is_empty():
+            self.head = created_node
+            self.tail = created_node
         else:
-            self.append(new_node)
+            self.tail.next = created_node
+            self.tail = created_node
         # TODO: If self.is_empty() == True set the head and the tail to the new node
         # TODO: Else append node after tail
 
@@ -83,19 +95,27 @@ class LinkedList:
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
-        if (self.is_empty() is False):
-            node = item
-            self.insert(node)
-
         # TODO: Create new node to hold given item
+        created_node = Node(item)
         # TODO: Prepend node before head, if it exists
+        # check to see if linked list exists 
+        if self.length() == 0:
+            # if there is no list, add node to head and tail
+            self.head = created_node
+            self.tail = created_node
+        else:
+            # linked list exists! only add to head
+            created_node.next = self.head
+            self.head = created_node
+
         
 
     def find(self, item):
         """Return an item from this linked list if it is present.
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
-        for node in nodes
+        node = self.head
+        while node != None:
             if (item == self.item):
                 return True
             else:
