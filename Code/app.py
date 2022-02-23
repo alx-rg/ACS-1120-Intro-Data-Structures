@@ -1,4 +1,5 @@
 """Main script, uses other modules to generate sentences."""
+#git subtree push --prefix Code heroku master (from main folder/source)
 from flask import Flask
 from dictogram import Dictogram
 
