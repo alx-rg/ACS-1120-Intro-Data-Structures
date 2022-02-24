@@ -76,7 +76,7 @@ class HashTable(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         bucket_index = self._bucket_index(key)
         key_bucket = self.buckets[bucket_index]
-        contains_key = key_bucket.find(lambda item: item[0] == key)
+        contains_key = key_bucket.find_if_matches(lambda item: item[0] == key)
         return contains_key is not None
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
