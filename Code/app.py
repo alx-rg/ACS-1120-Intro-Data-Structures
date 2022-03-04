@@ -2,7 +2,7 @@
 #git subtree push --prefix Code heroku master (from main folder/source)
 from flask import Flask, redirect, request, render_template, render_template_string
 from dictogram import Dictogram
-from twitter import tweet
+# from twitter import tweet
 
 app = Flask(__name__)
 

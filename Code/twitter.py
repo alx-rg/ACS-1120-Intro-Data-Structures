@@ -21,18 +21,18 @@ session = OAuth1Session(consumer_key,
 # print(access_token_secret)
 # print("------------")
                       
-# The URL endpoint to update a status (i.e. tweet)
-url = 'https://api.twitter.com/2/tweets'
+# # The URL endpoint to update a status (i.e. tweet)
+# url = 'https://api.twitter.com/2/tweets'
 
-# The contents of status (i.e. tweet text)
-status = 'Feeling like a test is in order eh?!'
+# # The contents of status (i.e. tweet text)
+# status = 'Feeling like a test is in order sssseh?!'
 
-# Send a POST request to the url with a 'status' parameter
-resp = session.post(url, json={ 'text': status })
+# # Send a POST request to the url with a 'status' parameter
+# resp = session.post(url, json={ 'text': status })
 
-# Show the text from the response
-print(resp.text)
+# # Show the text from the response
+# print(resp.text)
 
-def tweet(status):
-    resp = session.post(url, json={ 'text': status })
-    return resp.text
+# def tweet(status):
+#     resp = session.post(url, json={ 'text': status })
+#     return resp.text
