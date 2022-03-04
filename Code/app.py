@@ -1,8 +1,7 @@
 """Main script, uses other modules to generate sentences."""
 #git subtree push --prefix Code heroku master (from main folder/source)
 from venv import create
-from flask import Flask, redirect, request, render_template, render_template_string
-from dictogram import Dictogram
+from flask import Flask, redirect, request, render_template
 import twitter
 from markov import markov_chain, create_sentence
 from tokens import get_token
