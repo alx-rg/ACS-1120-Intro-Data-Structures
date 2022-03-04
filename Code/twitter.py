@@ -32,3 +32,7 @@ resp = session.post(url, json={ 'text': status })
 
 # Show the text from the response
 print(resp.text)
+
+def tweet(status):
+    resp = session.post(url, json={ 'text': status })
+    return resp.text
