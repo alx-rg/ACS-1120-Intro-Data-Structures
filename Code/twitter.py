@@ -14,12 +14,6 @@ session = OAuth1Session(consumer_key,
   client_secret=consumer_secret,
   resource_owner_key=access_token,
   resource_owner_secret=access_token_secret)
-# print("------------")
-# print(consumer_key)
-# print(consumer_secret)
-# print(access_token)
-# print(access_token_secret)
-# print("------------")
                       
 # # The URL endpoint to update a status (i.e. tweet)
 # url = 'https://api.twitter.com/2/tweets'
