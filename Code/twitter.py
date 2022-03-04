@@ -1,8 +1,8 @@
 import os
 import dotenv               # Always near the top!
-dotenv.load_dotenv('../.env')  # Load environment variables ASAP.
 from requests_oauthlib import OAuth1Session
 
+dotenv.load_dotenv('../.env')  # Load environment variables ASAP.
 
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
 consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
